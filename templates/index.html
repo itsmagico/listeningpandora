@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Players Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fas fa-users"></i> Players Online</h1>
+        <div class="players">
+            {% for name, data in players.items() %}
+            <div class="player-card">
+                <h2><i class="fas fa-user"></i> {{ name }}</h2>
+                <p><i class="fas fa-network-wired"></i> IP: {{ data.ip }}</p>
+                <p><i class="fas fa-tachometer-alt"></i> Ping: {{ data.ping }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
